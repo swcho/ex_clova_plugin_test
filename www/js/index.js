@@ -47,9 +47,20 @@ var app = {
             'Hello Plugin',
             function (msg) {
                 document.getElementsByTagName('h1')[0].innerHTML = msg;
+                console.log('echojs success ' +  msg);
             },
             function (err) {
                 document.getElementsByTagName('h1')[0].innerHTML = err;
+                console.log('echojs error ' + err);
+            }
+        );
+
+        modusecho.ntp(
+            function (msg) {
+                console.log('ntp success ' + msg);
+            },
+            function (err) {
+                console.log('ntp error ' + err);
             }
         );
     },
